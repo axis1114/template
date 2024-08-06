@@ -15,8 +15,6 @@ import (
 // @version 1.0
 // @contact.name Axios
 // @contact.email 1790146932@qq.com
-// @license.name Apache 2.0
-// @license.url http://www.apache.org/licenses/LICENSE-2.0.html
 // @host 127.0.0.1:8080
 // @BasePath /
 func main() {

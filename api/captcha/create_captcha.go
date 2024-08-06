@@ -15,6 +15,11 @@ type CaptchaResponse struct {
 	PicPath   string `json:"picPath"`
 }
 
+// CreateCaptcha 验证码生成
+// @Summary 验证码生成
+// @Router /api/captcha [get]
+// @Produce json
+// @Success 200 {object} res.Response{data=CaptchaResponse}
 func (Captcha *Captcha) CreateCaptcha(c *gin.Context) {
 	driver := base64Captcha.NewDriverDigit(
 		global.Config.Captcha.ImgHeight,

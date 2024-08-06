@@ -1,13 +1,41 @@
 basePath: /
+definitions:
+  captcha.CaptchaResponse:
+    properties:
+      captchaId:
+        type: string
+      picPath:
+        type: string
+    type: object
+  res.Response:
+    properties:
+      code:
+        type: integer
+      data: {}
+      msg:
+        type: string
+    type: object
 host: 127.0.0.1:8080
 info:
   contact:
     email: 1790146932@qq.com
     name: Axios
-  license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
   title: Template
   version: "1.0"
-paths: {}
+paths:
+  /api/captcha:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/res.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/captcha.CaptchaResponse'
+              type: object
+      summary: 验证码生成
 swagger: "2.0"
