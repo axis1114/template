@@ -1,7 +1,7 @@
 package validator
 
 import (
-	"fmt"
+	"gin_gorm/global"
 	"github.com/gin-gonic/gin/binding"
 	"github.com/go-playground/locales/en"
 	"github.com/go-playground/locales/zh"
@@ -32,7 +32,7 @@ func InitTrans(locale string) (err error) {
 		// 也可以使用 uni.FindTranslator(...) 传入多个locale进行查找
 		trans, ok = uni.GetTranslator(locale)
 		if !ok {
-			return fmt.Errorf("uni.GetTranslator(%s) failed", locale)
+			global.Log.Error("fail to get translator")
 		}
 
 		// 注册翻译器

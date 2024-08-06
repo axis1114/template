@@ -17,8 +17,9 @@ import (
 )
 
 var lg *zap.Logger
+var sugarLogger *zap.SugaredLogger
 
-func InitLog() *zap.Logger {
+func InitLog() *zap.SugaredLogger {
 	writeSyncer := getLogWriter(global.Config.Log.Filename,
 		global.Config.Log.MaxSize,
 		global.Config.Log.MaxBackups,
@@ -45,8 +46,9 @@ func InitLog() *zap.Logger {
 	}
 	lg = zap.New(core, zap.AddCaller())
 	zap.ReplaceGlobals(lg)
-	lg.Info("init logger success")
-	return lg
+	sugarLogger = lg.Sugar()
+	sugarLogger.Info("init logger success")
+	return sugarLogger
 }
 
 func getEncoder() zapcore.Encoder {

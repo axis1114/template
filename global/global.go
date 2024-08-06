@@ -14,6 +14,6 @@ var (
 	DB     *gorm.DB
 	Redis  *redis.Client
 	Es     *elasticsearch.TypedClient
-	Log    *zap.Logger
+	Log    *zap.SugaredLogger
 	Etcd   *clientv3.Client
 )
