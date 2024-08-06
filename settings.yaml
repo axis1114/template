@@ -2,6 +2,8 @@ system:
   host: 0.0.0.0
   port: 8080
   env: debug
+  start_time: "2024-08-06"
+  machine_id: 1
 log:
   level: "info"
   filename: "web_server.log"
@@ -41,7 +43,7 @@ etcd:
   host: 127.0.0.1
   port: 2379
 captcha:
-  key-long: 6
-  img-width: 240
-  img-height: 80
+  key_long: 6
+  img_width: 240
+  img_height: 80
 

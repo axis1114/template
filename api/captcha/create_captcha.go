@@ -29,6 +29,7 @@ func (Captcha *Captcha) CreateCaptcha(c *gin.Context) {
 		global.Log.Error("fail to generate the captcha", zap.Error(err))
 		return
 	}
+	//验证验证码store.Verify(CaptchaID, Captcha, true)
 	res.OkWithData(CaptchaResponse{
 		CaptchaID: id,
 		PicPath:   b64s,

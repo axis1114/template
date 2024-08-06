@@ -3,6 +3,7 @@ module gin_gorm
 go 1.22.3
 
 require (
+	github.com/bwmarrin/snowflake v0.3.0
 	github.com/dgrijalva/jwt-go/v4 v4.0.0-preview1
 	github.com/elastic/go-elasticsearch/v8 v8.14.0
 	github.com/fsnotify/fsnotify v1.7.0
@@ -10,6 +11,7 @@ require (
 	github.com/go-playground/locales v0.14.1
 	github.com/go-playground/universal-translator v0.18.1
 	github.com/go-playground/validator/v10 v10.22.0
+	github.com/mojocn/base64Captcha v1.3.6
 	github.com/natefinch/lumberjack v2.0.0+incompatible
 	github.com/redis/go-redis/v9 v9.6.1
 	github.com/spf13/viper v1.19.0
@@ -76,7 +78,6 @@ require (
 	github.com/mitchellh/mapstructure v1.5.1-0.20231216201459-8508981c8b6c // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
-	github.com/mojocn/base64Captcha v1.3.6 // indirect
 	github.com/pelletier/go-toml/v2 v2.2.2 // indirect
 	github.com/prometheus/client_golang v1.19.1 // indirect
 	github.com/rogpeppe/go-internal v1.12.0 // indirect
