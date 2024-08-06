@@ -8,5 +8,5 @@ import (
 
 func Code() string {
 	rand.NewSource(time.Now().UnixNano())
-	return fmt.Sprintf("%4v", rand.Intn(10000))
+	return fmt.Sprintf("%04d", rand.Intn(10000))
 }

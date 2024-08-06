@@ -5,13 +5,14 @@ import (
 )
 
 type Config struct {
-	Mysql  Mysql  `mapstructure:"mysql"`
-	Redis  Redis  `mapstructure:"redis"`
-	Log    Log    `mapstructure:"log"`
-	System System `mapstructure:"system"`
-	Email  Email  `mapstructure:"email"`
-	Es     Es     `mapstructure:"es"`
-	Jwt    Jwt    `mapstructure:"jwt"`
+	Mysql   Mysql   `mapstructure:"mysql"`
+	Redis   Redis   `mapstructure:"redis"`
+	Log     Log     `mapstructure:"log"`
+	System  System  `mapstructure:"system"`
+	Email   Email   `mapstructure:"email"`
+	Es      Es      `mapstructure:"es"`
+	Jwt     Jwt     `mapstructure:"jwt"`
+	Captcha Captcha `mapstructure:"captcha"`
 }
 
 func (m Mysql) Dsn() string {

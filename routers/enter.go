@@ -24,8 +24,9 @@ func InitRouter() *gin.Engine {
 	//注册swagger路由
 	router.GET("/swagger/*any", gs.WrapHandler(swaggerFiles.Handler))
 	//创建路由组
-	//apiRouterGroup := router.Group("api")
-	//routerGroupApp := RouterGroup{apiRouterGroup}
+	apiRouterGroup := router.Group("api")
+	routerGroupApp := RouterGroup{apiRouterGroup}
 	// 系统配置api
+	routerGroupApp.CaptchaRouter()
 	return router
 }

@@ -40,4 +40,8 @@ jwt:
 etcd:
   host: 127.0.0.1
   port: 2379
+captcha:
+  key-long: 6
+  img-width: 240
+  img-height: 80
 
