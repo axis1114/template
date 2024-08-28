@@ -65,6 +65,26 @@ func Newflags() {
 			Aliases: []string{"a"},
 			Usage:   "create a admin",
 		},
+		{
+			Name:    "export-mysql",
+			Aliases: []string{"e-m"},
+			Usage:   "export mysql data",
+		},
+		{
+			Name:    "import-mysql",
+			Aliases: []string{"i-m"},
+			Usage:   "import mysql data",
+		},
+		{
+			Name:    "export-es",
+			Aliases: []string{"e-e"},
+			Usage:   "export elasticsearch data",
+		},
+		{
+			Name:    "import-es",
+			Aliases: []string{"i-e"},
+			Usage:   "import elasticsearch data",
+		},
 	}
 	err := app.Run(os.Args)
 	if err != nil {
