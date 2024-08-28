@@ -76,6 +76,11 @@ func Newflags() {
 			Usage:   "import mysql data",
 		},
 		{
+			Name:    "es-index-create",
+			Aliases: []string{"e-i-c"},
+			Usage:   "create a elasticsearch index",
+		},
+		{
 			Name:    "export-es",
 			Aliases: []string{"e-e"},
 			Usage:   "export elasticsearch data",

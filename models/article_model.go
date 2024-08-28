@@ -56,9 +56,31 @@ func (a ArticleItem) CreateIndex() {
 	}
 	global.Log.Info("create the index successfully", zap.Any("index", resp))
 }
+func (a ArticleItem) CreateIndexByJson(index string) {
+	exist := a.ExistsIndexByJson(index)
+	if exist {
+		global.Log.Info("the index already exists")
+		return
+	}
+	resp, err := global.Es.Indices.
+		Create(index).
+		Do(context.Background())
+	if err != nil {
+		global.Log.Error("create the index failed, err:%v\n", zap.Error(err))
+		return
+	}
+	global.Log.Info("create the index successfully", zap.Any("index", resp))
+}
 
 func (a ArticleItem) ExistsIndex() bool {
 	resp, err := global.Es.Indices.Exists(a.Index()).Do(context.Background())
+	if err != nil {
+		global.Log.Error("detect the presence of the index", zap.Error(err))
+	}
+	return resp
+}
+func (a ArticleItem) ExistsIndexByJson(index string) bool {
+	resp, err := global.Es.Indices.Exists(index).Do(context.Background())
 	if err != nil {
 		global.Log.Error("detect the presence of the index", zap.Error(err))
 	}
