@@ -79,6 +79,7 @@ func (a ArticleItem) ExistsIndex() bool {
 	}
 	return resp
 }
+
 func (a ArticleItem) ExistsIndexByJson(index string) bool {
 	resp, err := global.Es.Indices.Exists(index).Do(context.Background())
 	if err != nil {

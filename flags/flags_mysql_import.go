@@ -2,14 +2,17 @@ package flags
 
 import (
 	"gin_gorm/global"
+	"github.com/urfave/cli/v2"
 	"os"
 	"strings"
 )
 
-func MysqlImport(path string) {
+func MysqlImport(c *cli.Context) (err error) {
+	path := c.String("path")
 	byteData, err := os.ReadFile(path)
 	if err != nil {
 		global.Log.Error("mysql import err:", err)
+		return err
 	}
 	//分割数据 一定要按照\r\n分割
 	sqlList := strings.Split(string(byteData), ";\r\n")
@@ -26,4 +29,5 @@ func MysqlImport(path string) {
 			continue
 		}
 	}
+	return nil
 }

@@ -6,16 +6,19 @@ import (
 	"fmt"
 	"gin_gorm/global"
 	"github.com/elastic/go-elasticsearch/v8/typedapi/types"
+	"github.com/urfave/cli/v2"
 	"os"
 	"time"
 )
 
-func EsExport(index string) {
+func EsExport(c *cli.Context) (err error) {
+	index := c.String("index")
 	res, err := global.Es.Search().Index(index).Query(&types.Query{
 		MatchAll: &types.MatchAllQuery{},
 	}).Do(context.Background())
 	if err != nil {
 		global.Log.Error("EsExport err:", err.Error())
+		return err
 	}
 
 	var data ESIndexResponse
@@ -35,12 +38,14 @@ func EsExport(index string) {
 	_, err = file.Write(byteData)
 	if err != nil {
 		global.Log.Error("EsExport err:", err.Error())
-		return
+		return err
 	}
 	err = file.Close()
 	if err != nil {
 		global.Log.Error("EsExport err:", err.Error())
+		return err
 	}
 
 	global.Log.Infof("索引 %s 导出成功  %s", index, fileName)
+	return nil
 }

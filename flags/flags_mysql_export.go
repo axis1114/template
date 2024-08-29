@@ -4,11 +4,12 @@ import (
 	"bytes"
 	"fmt"
 	"gin_gorm/global"
+	"github.com/urfave/cli/v2"
 	"os/exec"
 	"time"
 )
 
-func MysqlExport() {
+func MysqlExport(c *cli.Context) (err error) {
 	mysql := global.Config.Mysql
 
 	timer := time.Now().Format("20060102")
@@ -23,11 +24,12 @@ func MysqlExport() {
 	cmd.Stdout = &out
 	cmd.Stderr = &stderr
 
-	err := cmd.Run()
+	err = cmd.Run()
 
 	if err != nil {
 		global.Log.Errorln(err.Error(), stderr.String())
-		return
+		return err
 	}
 	global.Log.Infof("sql文件 %s 导出成功", sqlPath)
+	return nil
 }

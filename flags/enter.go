@@ -42,9 +42,14 @@ import (
 
 func Newflags() {
 	var app = cli.NewApp()
-	app.Name = ""
-	app.Usage = ""
-	app.Authors = []*cli.Author{}
+	app.Name = "template"
+	app.Usage = "template"
+	app.Authors = []*cli.Author{
+		{
+			Name:  "Axios",
+			Email: "1790146932@qq.com",
+		},
+	}
 	app.Commands = []*cli.Command{
 		{
 			Name:    "db",
@@ -69,31 +74,53 @@ func Newflags() {
 			Name:    "export-mysql",
 			Aliases: []string{"e-m"},
 			Usage:   "export mysql data",
+			Action:  MysqlExport,
 		},
 		{
 			Name:    "import-mysql",
 			Aliases: []string{"i-m"},
 			Usage:   "import mysql data",
+			Action:  MysqlImport,
+			Flags: []cli.Flag{
+				&cli.StringFlag{
+					Name: "path",
+				},
+			},
 		},
 		{
 			Name:    "es-index-create",
 			Aliases: []string{"e-i-c"},
 			Usage:   "create a elasticsearch index",
+			Action:  EsIndexCreate,
 		},
 		{
 			Name:    "export-es",
 			Aliases: []string{"e-e"},
 			Usage:   "export elasticsearch data",
-		},
+			Action:  EsExport,
+			Flags: []cli.Flag{
+				&cli.StringFlag{
+					Name: "index",
+				},
+			}},
 		{
 			Name:    "import-es",
 			Aliases: []string{"i-e"},
 			Usage:   "import elasticsearch data",
+			Action:  EsImport,
+			Flags: []cli.Flag{
+				&cli.StringFlag{
+					Name: "path",
+				},
+			},
 		},
 	}
-	err := app.Run(os.Args)
-	if err != nil {
-		global.Log.Error("init cmd error", zap.Error(err))
-		return
+	if len(os.Args) > 1 {
+		err := app.Run(os.Args)
+		if err != nil {
+			global.Log.Error("init cmd error", zap.Error(err))
+			return
+		}
+		os.Exit(0)
 	}
 }

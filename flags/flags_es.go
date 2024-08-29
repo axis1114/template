@@ -1,6 +1,10 @@
 package flags
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"gin_gorm/models"
+	"github.com/urfave/cli/v2"
+)
 
 type Data struct {
 	ID  *string         `json:"id"`
@@ -10,4 +14,10 @@ type Data struct {
 type ESIndexResponse struct {
 	Index string `json:"index"`
 	Data  []Data `json:"data"`
+}
+
+func EsIndexCreate(c *cli.Context) (err error) {
+	var es models.ArticleItem
+	es.CreateIndex()
+	return nil
 }
