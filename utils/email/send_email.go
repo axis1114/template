@@ -2,9 +2,9 @@ package email
 
 import (
 	"context"
-	"gin_gorm/global"
-	"gin_gorm/utils/random"
 	"gopkg.in/gomail.v2"
+	"template/global"
+	"template/utils/random"
 	"time"
 )
 

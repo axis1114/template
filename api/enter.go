@@ -1,9 +1,13 @@
 package api
 
-import "gin_gorm/api/captcha"
+import (
+	"template/api/captcha"
+	"template/api/chat"
+)
 
 type AppGroup struct {
 	CaptchaApi captcha.Captcha
+	ChatApi    chat.Chat
 }
 
 var AppGroupApp = new(AppGroup)

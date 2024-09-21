@@ -1,8 +1,8 @@
 package jwt
 
 import (
-	"gin_gorm/global"
 	"github.com/dgrijalva/jwt-go/v4"
+	"template/global"
 	"time"
 )
 

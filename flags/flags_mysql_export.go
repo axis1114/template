@@ -3,9 +3,9 @@ package flags
 import (
 	"bytes"
 	"fmt"
-	"gin_gorm/global"
 	"github.com/urfave/cli/v2"
 	"os/exec"
+	"template/global"
 	"time"
 )
 

@@ -1,11 +1,11 @@
 package middleware
 
 import (
-	"gin_gorm/models/res"
-	ctype "gin_gorm/models/types"
-	"gin_gorm/service/redis_ser"
-	"gin_gorm/utils/jwt"
 	"github.com/gin-gonic/gin"
+	"template/models/res"
+	ctype "template/models/types"
+	"template/service/redis_ser"
+	"template/utils/jwt"
 )
 
 func JwtAuth() gin.HandlerFunc {

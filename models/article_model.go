@@ -4,9 +4,9 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"gin_gorm/global"
 	"github.com/elastic/go-elasticsearch/v8/typedapi/types"
 	"go.uber.org/zap"
+	"template/global"
 )
 
 type ArticleItem struct {

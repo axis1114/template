@@ -2,8 +2,8 @@ package core
 
 import (
 	"fmt"
-	"gin_gorm/global"
 	"github.com/elastic/go-elasticsearch/v8"
+	"template/global"
 )
 
 func InitEs() *elasticsearch.TypedClient {

@@ -2,8 +2,8 @@ package flags
 
 import (
 	"encoding/json"
-	"gin_gorm/models"
 	"github.com/urfave/cli/v2"
+	"template/models"
 )
 
 type Data struct {

@@ -1,9 +1,9 @@
 package core
 
 import (
-	"gin_gorm/global"
 	"go.etcd.io/etcd/clientv3"
 	"go.uber.org/zap"
+	"template/global"
 	"time"
 )
 

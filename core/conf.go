@@ -2,9 +2,9 @@ package core
 
 import (
 	"fmt"
-	"gin_gorm/global"
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
+	"template/global"
 )
 
 const filePath = "settings.yaml"

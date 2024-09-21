@@ -1,4 +1,4 @@
-module gin_gorm
+module template
 
 go 1.22.3
 
@@ -29,6 +29,7 @@ require (
 
 require (
 	github.com/BurntSushi/toml v1.4.0 // indirect
+	github.com/DanPlayer/randomname v1.0.1 // indirect
 	github.com/KyleBanks/depth v1.2.1 // indirect
 	github.com/PuerkitoBio/purell v1.1.1 // indirect
 	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect

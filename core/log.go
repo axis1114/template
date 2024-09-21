@@ -2,7 +2,6 @@ package core
 
 import (
 	"fmt"
-	"gin_gorm/global"
 	"github.com/gin-gonic/gin"
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap"
@@ -13,6 +12,7 @@ import (
 	"os"
 	"runtime/debug"
 	"strings"
+	"template/global"
 	"time"
 )
 

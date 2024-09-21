@@ -2,8 +2,8 @@ package redis_ser
 
 import (
 	"context"
-	"gin_gorm/global"
-	"gin_gorm/utils"
+	"template/global"
+	"template/utils"
 	"time"
 )
 

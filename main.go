@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"gin_gorm/core"
-	"gin_gorm/flags"
-	"gin_gorm/global"
-	"gin_gorm/routers"
-	"gin_gorm/utils"
-	"gin_gorm/utils/validator"
 	"go.uber.org/zap"
+	"template/core"
+	"template/flags"
+	"template/global"
+	"template/routers"
+	"template/utils"
+	"template/utils/validator"
 )
 
 // @title Template

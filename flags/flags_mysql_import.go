@@ -1,10 +1,10 @@
 package flags
 
 import (
-	"gin_gorm/global"
 	"github.com/urfave/cli/v2"
 	"os"
 	"strings"
+	"template/global"
 )
 
 func MysqlImport(c *cli.Context) (err error) {

@@ -1,9 +1,9 @@
 package flags
 
 import (
-	"gin_gorm/global"
 	"github.com/urfave/cli/v2"
 	"go.uber.org/zap"
+	"template/global"
 )
 
 func DB(c *cli.Context) (err error) {

@@ -1,14 +1,14 @@
 package routers
 
 import (
-	"gin_gorm/core"
-	_ "gin_gorm/docs"
-	"gin_gorm/global"
-	"gin_gorm/utils"
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
 	gs "github.com/swaggo/gin-swagger"
 	"net/http"
+	"template/core"
+	_ "template/docs"
+	"template/global"
+	"template/utils"
 )
 
 type RouterGroup struct {

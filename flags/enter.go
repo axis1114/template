@@ -1,10 +1,10 @@
 package flags
 
 import (
-	"gin_gorm/global"
 	"github.com/urfave/cli/v2"
 	"go.uber.org/zap"
 	"os"
+	"template/global"
 )
 
 //type Option struct {
@@ -56,9 +56,6 @@ func Newflags() {
 			Aliases: []string{"db"},
 			Usage:   "create table",
 			Action:  DB,
-			Flags: []cli.Flag{
-				&cli.StringFlag{},
-			},
 		},
 		{
 			Name:    "user",

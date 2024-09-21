@@ -2,8 +2,8 @@ package jwt
 
 import (
 	"errors"
-	"gin_gorm/global"
 	"github.com/dgrijalva/jwt-go/v4"
+	"template/global"
 )
 
 func ParseToken(tokenStr string) (*CustomClaims, error) {

@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"gin_gorm/global"
+	"template/global"
 )
 
 func PrintSystem() {

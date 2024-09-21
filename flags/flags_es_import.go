@@ -3,11 +3,11 @@ package flags
 import (
 	"context"
 	"encoding/json"
-	"gin_gorm/global"
-	"gin_gorm/models"
 	"github.com/elastic/go-elasticsearch/v8/typedapi/core/bulk"
 	"github.com/urfave/cli/v2"
 	"os"
+	"template/global"
+	"template/models"
 )
 
 func EsImport(c *cli.Context) (err error) {

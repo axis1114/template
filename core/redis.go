@@ -2,9 +2,9 @@ package core
 
 import (
 	"context"
-	"gin_gorm/global"
 	"github.com/redis/go-redis/v9"
 	"go.uber.org/zap"
+	"template/global"
 )
 
 func InitRedis() *redis.Client {

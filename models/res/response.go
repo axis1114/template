@@ -1,9 +1,9 @@
 package res
 
 import (
-	"gin_gorm/utils"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"template/utils"
 )
 
 type Response struct {

@@ -4,10 +4,10 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"gin_gorm/global"
 	"github.com/elastic/go-elasticsearch/v8/typedapi/types"
 	"github.com/urfave/cli/v2"
 	"os"
+	"template/global"
 	"time"
 )
 

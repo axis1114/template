@@ -1,9 +1,9 @@
 package utils
 
 import (
-	"gin_gorm/global"
 	"go.uber.org/zap"
 	"net"
+	"template/global"
 )
 
 func GetIPList() (ipList []string) {
