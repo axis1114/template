@@ -1,6 +1,7 @@
 package global
 
 import (
+	"github.com/cc14514/go-geoip2"
 	"github.com/elastic/go-elasticsearch/v8"
 	"github.com/redis/go-redis/v9"
 	"go.etcd.io/etcd/clientv3"
@@ -16,4 +17,5 @@ var (
 	Es     *elasticsearch.TypedClient
 	Log    *zap.SugaredLogger
 	Etcd   *clientv3.Client
+	AddrDB *geoip2.DBReader
 )
