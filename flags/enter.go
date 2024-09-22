@@ -115,8 +115,7 @@ func Newflags() {
 	if len(os.Args) > 1 {
 		err := app.Run(os.Args)
 		if err != nil {
-			global.Log.Error("init cmd error", zap.Error(err))
-			return
+			global.Log.Fatal("init cmd error", zap.Error(err))
 		}
 		os.Exit(0)
 	}

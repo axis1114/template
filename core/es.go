@@ -15,7 +15,7 @@ func InitEs() *elasticsearch.TypedClient {
 	}
 	es, err := elasticsearch.NewTypedClient(cfg)
 	if err != nil {
-		lg.Fatal(fmt.Sprintf("[%s] es连接失败", dsn))
+		global.Log.Fatal(fmt.Sprintf("[%s] es连接失败", dsn))
 	}
 	return es
 }

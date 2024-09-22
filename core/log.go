@@ -1,11 +1,11 @@
 package core
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
+	"log"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -28,8 +28,7 @@ func InitLog() *zap.SugaredLogger {
 	var l = new(zapcore.Level)
 	err := l.UnmarshalText([]byte(global.Config.Log.Level))
 	if err != nil {
-		fmt.Printf("UnmarshalText err:%v\n", err)
-		return nil
+		log.Fatalf("UnmarshalText err:%v\n", err)
 	}
 	var core zapcore.Core
 	if global.Config.System.Env == "debug" {

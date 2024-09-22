@@ -11,8 +11,7 @@ import (
 
 func InitGorm() *gorm.DB {
 	if global.Config.Mysql.Host == "" {
-		lg.Warn("未配置mysql，取消gorm连接")
-		return nil
+		global.Log.Fatal("未配置mysql，取消gorm连接")
 	}
 
 	dsn := global.Config.Mysql.Dsn()

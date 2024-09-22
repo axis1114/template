@@ -13,8 +13,7 @@ func InitEtcd() *clientv3.Client {
 		DialTimeout: 5 * time.Second,
 	})
 	if err != nil {
-		global.Log.Error("init etcd client fail", zap.Error(err))
-		return nil
+		global.Log.Fatal("init etcd client fail", zap.Error(err))
 	}
 	return client
 }
