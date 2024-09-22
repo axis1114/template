@@ -8,7 +8,6 @@ import (
 	"template/global"
 	"template/routers"
 	"template/utils"
-	"template/utils/validator"
 )
 
 // @title Template
@@ -26,7 +25,7 @@ func main() {
 	global.Etcd = core.InitEtcd()
 	global.AddrDB = core.InitAddrDB()
 	flags.Newflags()
-	err := validator.InitTrans("en")
+	err := utils.InitTrans("en")
 	if err != nil {
 		global.Log.Error("fail to init trans", zap.Error(err))
 		return

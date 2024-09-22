@@ -1,4 +1,4 @@
-package random
+package utils
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func Code() string {
+func GenCode() string {
 	rand.NewSource(time.Now().UnixNano())
 	return fmt.Sprintf("%04d", rand.Intn(10000))
 }
